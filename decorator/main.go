@@ -7,6 +7,9 @@ func main() {
 	notificadorDuplicador := NewNotificadorDuplicador(notificador)
 	notificadorDuplicador.Notificar("essa mensagem será duplicada")
 
-	notificadorCripto := NewNotificadorCriptografado(notificador)
-	notificadorCripto.Notificar("mensagem criptografada")
+	notificadorCriptografado := NewNotificadorCriptografado(notificador)
+	notificadorCriptografado.Notificar("mensagem criptografada")
+
+	notificadorCriptografadoDuplicador := NewNotificadorCriptografado(notificadorDuplicador)
+	notificadorCriptografadoDuplicador.Notificar("essa mensagem será duplicada e criptografada")
 }
