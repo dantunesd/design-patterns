@@ -13,7 +13,7 @@ func NewTomadaAdaptador(tomadaComum ITomadaComum) *TomadaAdaptador {
 }
 
 func (t TomadaAdaptador) EnergizarAparelho(aparelhoDiferente *AparelhoDiferente) string {
-	fmt.Println("adaptando plug de 3 pinos para usar na tomada Comum")
+	fmt.Println("adaptando aparelho com plug diferente para usar na tomada Comum")
 
 	aparelhoComum := &Aparelho{Nome: aparelhoDiferente.Nome}
 

@@ -4,4 +4,4 @@
 
 ## Ao criar um decorator, conseguimos melhorar algum objeto, sem ter que alterá-lo, dando assim, novas opções de utilização do objeto.
 
-## Além disso, não precisamos sua mudar interface e conseguimos ainda substituir ou pelo outro e até mesmo encadeá-los.
+## Além disso, não precisamos sua mudar interface e conseguimos ainda substituir um pelo outro e até mesmo encadeá-los.
