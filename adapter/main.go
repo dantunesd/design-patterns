@@ -5,14 +5,15 @@ import "fmt"
 func main() {
 	tomada := NewTomadaComum()
 
-	aparelho := NewPlugComum("TV smart")
+	aparelho := NewAparelho("TV smart")
 	fmt.Println(
 		tomada.EnergizarAparelho(aparelho),
 	)
 
-	aparelhoTresPinos := NewPlugTresPinos("TV smart 3 pinos")
-	tomadaAdapter := NewTomadaAdapter(tomada)
+	aparelhoDiferente := NewAparelhoDiferente("TV smart 3 pinos")
+
+	tomadaAdaptador := NewTomadaAdaptador(tomada)
 	fmt.Println(
-		tomadaAdapter.EnergizarAparelho(aparelhoTresPinos),
+		tomadaAdaptador.EnergizarAparelho(aparelhoDiferente),
 	)
 }
