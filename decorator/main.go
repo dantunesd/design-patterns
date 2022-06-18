@@ -1,15 +1,17 @@
 package main
 
+import "design-patterns/decorator/notifier"
+
 func main() {
-	notificador := NewNotificador()
-	notificador.Notificar("mensagem padrão")
+	basicNotifier := notifier.NewBasicNotifier()
+	basicNotifier.Notify("basic message")
 
-	notificadorDuplicador := NewNotificadorDuplicador(notificador)
-	notificadorDuplicador.Notificar("essa mensagem será duplicada")
+	duplicator := notifier.NewDuplicator(basicNotifier)
+	duplicator.Notify("duplicated message")
 
-	notificadorCriptografado := NewNotificadorCriptografado(notificador)
-	notificadorCriptografado.Notificar("mensagem criptografada")
+	encrypter := notifier.NewEncrypter(basicNotifier)
+	encrypter.Notify("encrypted message")
 
-	notificadorCriptografadoDuplicador := NewNotificadorCriptografado(notificadorDuplicador)
-	notificadorCriptografadoDuplicador.Notificar("essa mensagem será duplicada e criptografada")
+	encrypterAndDuplicator := notifier.NewEncrypter(duplicator)
+	encrypterAndDuplicator.Notify("encrypted and duplicated message")
 }

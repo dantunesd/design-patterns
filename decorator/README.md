@@ -1,7 +1,10 @@
 # Decorator
 
-## As vezes criamos objetos simples/basico que tem uma determinada finalidade, porém chega um momento onde queremos aumentar sua versatilidade.
+As vezes criamos objetos simples/basico que tem uma determinada finalidade, porém chega um momento onde queremos aumentar sua versatilidade.
 
-## Ao criar um decorator, conseguimos melhorar algum objeto, sem ter que alterá-lo, dando assim, novas opções de utilização do objeto.
+Sometimes we create basic objects with simple structures. But there comes a time where we want to improve this structure adding new capabilities.
 
-## Além disso, não precisamos sua mudar interface e conseguimos ainda substituir um pelo outro e até mesmo encadeá-los.
+Creating a Decorator we are able to improve an object, adding new capabilities without having to change it.
+
+Moreover we don't have to change its interface and we also can change, chain or remove these capabilities.
+

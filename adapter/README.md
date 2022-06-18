@@ -1,5 +1,5 @@
 # Adapter
 
-## Uma tomada com suporte a plug de dois pinos, não suportam outros tipos de plugs.
+Creating an Adapter, you can "transform" an object into another.
 
-## Ao criar um adapator, torna se possivel conectar aparelhos com outros tipos de plugs na mesma tomada, sem a necessidade de alterá-la
+Applying this pattern, you can decouple your application, giving a new interface to an existing object without having to change it.

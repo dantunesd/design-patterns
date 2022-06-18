@@ -1,19 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"design-patterns/adapter/logger"
+	"log"
+)
 
 func main() {
-	tomada := NewTomadaComum()
+	standardLogger := log.Default()
+	CoupledWithStandardLogger(standardLogger)
 
-	aparelho := NewAparelho("TV smart")
-	fmt.Println(
-		tomada.EnergizarAparelho(aparelho),
-	)
+	loggerAdapter := logger.NewAdapter(standardLogger)
+	UncoupledWithStandarLogger(loggerAdapter)
+}
 
-	aparelhoDiferente := NewAparelhoDiferente("TV smart 3 pinos")
+func CoupledWithStandardLogger(logger *log.Logger) {
+	logger.Println("debug message")
+	logger.Println("info message")
+	logger.Println("error message")
+}
 
-	tomadaAdaptador := NewTomadaAdaptador(tomada)
-	fmt.Println(
-		tomadaAdaptador.EnergizarAparelho(aparelhoDiferente),
-	)
+func UncoupledWithStandarLogger(logger logger.NewLogger) {
+	logger.Debug("message")
+	logger.Info("message")
+	logger.Error("message")
 }
