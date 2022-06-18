@@ -2,12 +2,12 @@ package notifier
 
 import "fmt"
 
-type BasicNotifier struct{}
+type Default struct{}
 
-func NewBasicNotifier() *BasicNotifier {
-	return &BasicNotifier{}
+func NewDefault() *Default {
+	return &Default{}
 }
 
-func (n BasicNotifier) Notify(message string) {
+func (n Default) Notify(message string) {
 	fmt.Println(message)
 }

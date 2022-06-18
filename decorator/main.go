@@ -3,13 +3,13 @@ package main
 import "design-patterns/decorator/notifier"
 
 func main() {
-	basicNotifier := notifier.NewBasicNotifier()
-	basicNotifier.Notify("basic message")
+	defaultNotifier := notifier.NewDefault()
+	defaultNotifier.Notify("basic message")
 
-	duplicator := notifier.NewDuplicator(basicNotifier)
+	duplicator := notifier.NewDuplicator(defaultNotifier)
 	duplicator.Notify("duplicated message")
 
-	encrypter := notifier.NewEncrypter(basicNotifier)
+	encrypter := notifier.NewEncrypter(defaultNotifier)
 	encrypter.Notify("encrypted message")
 
 	encrypterAndDuplicator := notifier.NewEncrypter(duplicator)
