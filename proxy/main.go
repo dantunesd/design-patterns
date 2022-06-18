@@ -16,4 +16,7 @@ func main() {
 
 	println(articleRepositoryProxy.Get(1))
 	println(articleRepositoryProxy.Get(2))
+
+	articleRepositoryProxy.Save("content two")
+	println(articleRepositoryProxy.Get(2))
 }
