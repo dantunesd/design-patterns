@@ -8,6 +8,6 @@ func NewDuplicator(notifier Notifier) *Duplicator {
 	return &Duplicator{notifier: notifier}
 }
 
-func (N Duplicator) Notify(message string) {
-	N.notifier.Notify(message + " " + message)
+func (d *Duplicator) Notify(message string) {
+	d.notifier.Notify(message + " " + message)
 }

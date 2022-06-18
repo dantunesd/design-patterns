@@ -8,6 +8,6 @@ func NewDefault() *Default {
 	return &Default{}
 }
 
-func (n Default) Notify(message string) {
+func (d *Default) Notify(message string) {
 	fmt.Println(message)
 }

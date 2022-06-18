@@ -12,8 +12,8 @@ func NewEncrypter(notifier Notifier) *Encrypter {
 	return &Encrypter{notifier: notifier}
 }
 
-func (N Encrypter) Notify(message string) {
-	N.notifier.Notify(
+func (e *Encrypter) Notify(message string) {
+	e.notifier.Notify(
 		base64.StdEncoding.EncodeToString([]byte(message)),
 	)
 }
