@@ -1,6 +1,6 @@
 package main
 
 func main() {
-	envioEncomenda := NewEnvioEncomendaFacade()
-	envioEncomenda.EnviarEncomenda("encomenda exemplo")
+	orderSender := NewOrderSenderFacade()
+	orderSender.Send("my package example")
 }

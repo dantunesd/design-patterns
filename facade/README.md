@@ -1,7 +1,7 @@
 # Facade
 
-## Quando queremos enviar algo para outro lugar, geralmente usamos um serviço de entregas. Existe uma serie de etapas complexas que precisam ser realizadas de forma organizada e sequencial para que o item chegue ao destino.
+Sometimes we want to execute a "simple" process, but them we see that this little process requires to instantiate many classes and call lots of methods in order.
 
-## Porém, nós como clientes, apenas queremos que o item chegue, não queremos "nos importar" com o processo. Dessa forma, o serviço apenas nos oferece uma "interface" simplificada para usarmos, e eles cuidam de todo o resto.
+We still have to do this "hard job", but creating a facade we hide all the creation and execution complexity behind a simplified interface.
 
-## A ideia do facade é essa, esconder uma série de etapas complexas atrás de uma interface simples, facilitando a utilização do serviço por completo.
+So everytime you need to execute this process again, we simply call method that will do that hard work.
