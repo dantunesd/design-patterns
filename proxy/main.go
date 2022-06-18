@@ -1,11 +1,19 @@
 package main
 
-func main() {
-	atorVerdadeiro := NewAtor("Jack Chan")
-	ator := NewDuble(atorVerdadeiro)
+import (
+	"design-patterns/proxy/repository"
+)
 
-	ator.Correr()
-	ator.Pular("grade")
-	ator.Pular("carro")
-	ator.Pular("montanha")
+func main() {
+	articleRepository := repository.NewArticles()
+	articleRepository.Save("content one")
+
+	println(articleRepository.Get(1))
+	println(articleRepository.Get(2))
+
+	articleRepositoryProxy := repository.NewArticlesProxy(repository.NewArticles())
+	articleRepositoryProxy.Save("content one")
+
+	println(articleRepositoryProxy.Get(1))
+	println(articleRepositoryProxy.Get(2))
 }

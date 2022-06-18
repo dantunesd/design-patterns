@@ -1,7 +1,5 @@
 # Proxy
 
-## No processo de criação de um filme, um ator deve atuar em diversas cenas. Porém, existem cenas que requerem habilidades que o autor nao tem.
+Sometimes you want to implement some logics to improve performance or security or monitoring and so on. 
 
-## Para isso existe o dublê. Em certos momentos ele será acionado para realizar aquela ação com maior eficiencia. 
-
-## A ideia do proxy essa, é decidir se queremos chamar o objeto verdadeiro naquele momento ou não, nos oferencendo segurança ou desempenho, entre outros beneficios, quando acharmos conveniente, sem que o cliente necessariamente saiba que um duble que está agiando no final das contas. 
+Creating a proxy, you can control the calls to the original object. Proxy has a similar structure to Decorators, however, while in decorator you improve the original object, with proxy you control the original object life cycle, calling it either or not.
