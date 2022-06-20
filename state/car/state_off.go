@@ -1,6 +1,6 @@
 package car
 
-import "fmt"
+var carOffMessage = "The car is off"
 
 type StateOff struct {
 	car *Car
@@ -13,23 +13,31 @@ func NewStateOff(car *Car) *StateOff {
 }
 
 func (s *StateOff) TurnOn() {
-	fmt.Println("Turning on the car")
+	println("Turning on the car")
 
 	s.car.setNewState(NewStateOn(s.car))
 }
 
 func (s *StateOff) TurnOff() {
-	fmt.Println("trying to turn off but the car is off")
-}
-
-func (s *StateOff) SwitchTo(gear GearState) {
-	fmt.Println("trying to switch gear but the car is off")
+	println(carOffMessage)
 }
 
 func (s *StateOff) Accelerate() {
-	fmt.Println("trying to accelerate but the car is off")
+	println(carOffMessage)
 }
 
 func (s *StateOff) Brake() {
-	fmt.Println("trying to brake but the car is off")
+	println(carOffMessage)
+}
+
+func (s *StateOff) SwitchToNeutral() {
+	println(carOffMessage)
+}
+
+func (s *StateOff) SwitchToDrive() {
+	println(carOffMessage)
+}
+
+func (s *StateOff) SwitchToReverse() {
+	println(carOffMessage)
 }

@@ -1,7 +1,5 @@
 package car
 
-import "fmt"
-
 type StateOn struct {
 	car *Car
 }
@@ -13,30 +11,31 @@ func NewStateOn(car *Car) *StateOn {
 }
 
 func (s *StateOn) TurnOn() {
-	fmt.Println("the car is already on")
+	println("the car is already on")
 }
 
 func (s *StateOn) TurnOff() {
-	fmt.Println("Turning off the car")
+	println("Turning off the car")
 
 	s.car.setNewState(NewStateOff(s.car))
 }
 
-func (s *StateOn) SwitchTo(gear GearState) {
-	fmt.Println("Switching gear to: " + gear)
-
-	s.car.gear.SwitchTo(gear)
-}
-
 func (s *StateOn) Accelerate() {
-	if s.car.gear.IsNeutral() {
-		fmt.Println("The car is on neutral gear. Change it.")
-		return
-	}
-
-	fmt.Println("Accelerating the car " + s.car.gear.GetDirection())
+	s.car.gear.Accelerate()
 }
 
 func (s *StateOn) Brake() {
-	fmt.Println("braking the car")
+	s.car.gear.Brake()
+}
+
+func (s *StateOn) SwitchToNeutral() {
+	s.car.gear.SwitchToNeutral()
+}
+
+func (s *StateOn) SwitchToDrive() {
+	s.car.gear.SwitchToDrive()
+}
+
+func (s *StateOn) SwitchToReverse() {
+	s.car.gear.SwitchToReverse()
 }
