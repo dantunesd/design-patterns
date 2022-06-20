@@ -8,17 +8,21 @@ type ICarState interface {
 	Brake()
 }
 
-type Car struct {
-	state  ICarState
-	engine IEngine
-	gear   IGear
+type IGear interface {
+	SwitchTo(gear GearState)
+	IsNeutral() bool
+	GetDirection() string
 }
 
-func NewCar(engine IEngine, gear IGear) *Car {
+type Car struct {
+	state ICarState
+	gear  IGear
+}
+
+func NewCar() *Car {
 	car := &Car{}
 
-	car.engine = engine
-	car.gear = gear
+	car.gear = NewGear()
 	car.state = NewStateOff(car)
 
 	return car
@@ -46,12 +50,4 @@ func (c *Car) Brake() {
 
 func (c *Car) setNewState(state ICarState) {
 	c.state = state
-}
-
-func (c *Car) canAccelerate() bool {
-	return !c.gear.IsNeutral()
-}
-
-func (c *Car) getDirection() string {
-	return c.gear.GetDirection()
 }

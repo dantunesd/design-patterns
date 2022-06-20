@@ -1,11 +1,5 @@
 package car
 
-type IGear interface {
-	SwitchTo(gear GearState)
-	IsNeutral() bool
-	GetDirection() string
-}
-
 type GearState string
 
 const (

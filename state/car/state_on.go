@@ -29,12 +29,12 @@ func (s *StateOn) SwitchTo(gear GearState) {
 }
 
 func (s *StateOn) Accelerate() {
-	if !s.car.canAccelerate() {
+	if s.car.gear.IsNeutral() {
 		fmt.Println("The car is on neutral gear. Change it.")
 		return
 	}
 
-	fmt.Println("Accelerating the car " + s.car.getDirection())
+	fmt.Println("Accelerating the car " + s.car.gear.GetDirection())
 }
 
 func (s *StateOn) Brake() {

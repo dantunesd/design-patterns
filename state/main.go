@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	myCar := car.NewCar(car.NewEngine(), car.NewGear())
+	myCar := car.NewCar()
 
 	fmt.Println("----- Instanciating a car off and at neutral gear -----")
 
@@ -23,13 +23,13 @@ func main() {
 	myCar.SwitchTo(car.Drive) // Switch to drive mode.
 	myCar.Accelerate()        // Let's go.
 	myCar.TurnOn()            // Ops, wrong command.
-	myCar.Accelerate()        // And accelerate a little bit more.
-	myCar.Brake()             // It's fast, let's break.
+	myCar.Accelerate()        // Let's accelerate a little bit more.
+	myCar.Brake()             // It's fast, let's brake it or we'll break.
 
 	fmt.Println("----- Let's turn off the car -----")
 
 	myCar.SwitchTo(car.Reverse) // Let's keep it in the garage
-	myCar.Accelerate()          // Backing the car
+	myCar.Accelerate()          // Backing up the car
 	myCar.Brake()               // Great.
 	myCar.TurnOff()             // It's enough for today. See you tomorrow.
 }
