@@ -28,7 +28,7 @@ func main() {
 	println("----- Let's turn off the car -----")
 
 	myCar.SwitchToReverse() // Let's keep it in the garage
-	myCar.SwitchToReverse() // Ops, it's already switched, I didn't see it
+	myCar.SwitchToReverse() // Ops, it was already switched, I didn't see it
 	myCar.Accelerate()      // Backing up the car
 	myCar.Brake()           // Great.
 	myCar.TurnOff()         // It's enough for today. See you tomorrow.
