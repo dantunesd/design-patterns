@@ -1,10 +1,15 @@
 package gear
 
+import "reflect"
+
 type State string
 
 type IGearState interface {
 	Accelerate()
 	Brake()
+	SwitchToNeutral()
+	SwitchToDrive()
+	SwitchToReverse()
 }
 
 type Gear struct {
@@ -20,7 +25,6 @@ func NewGear() *Gear {
 
 func (g *Gear) Accelerate() {
 	g.state.Accelerate()
-
 }
 
 func (g *Gear) Brake() {
@@ -28,19 +32,19 @@ func (g *Gear) Brake() {
 }
 
 func (g *Gear) SwitchToNeutral() {
-	println("Switching to neutral")
-
-	g.state = NewStateNeutral(g)
+	g.state.SwitchToNeutral()
 }
 
 func (g *Gear) SwitchToDrive() {
-	println("Switching to drive")
-
-	g.state = NewStateDrive(g)
+	g.state.SwitchToDrive()
 }
 
 func (g *Gear) SwitchToReverse() {
-	println("Switching to reverse")
+	g.state.SwitchToReverse()
+}
 
-	g.state = NewStateReverse(g)
+func (g *Gear) setNewState(state IGearState) {
+	println("Switching gear: " + reflect.TypeOf(state).Elem().Name())
+
+	g.state = state
 }

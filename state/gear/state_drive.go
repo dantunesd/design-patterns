@@ -17,3 +17,15 @@ func (s *StateDrive) Accelerate() {
 func (s *StateDrive) Brake() {
 	println("Braking the car")
 }
+
+func (s *StateDrive) SwitchToNeutral() {
+	s.gear.setNewState(NewStateNeutral(s.gear))
+}
+
+func (s *StateDrive) SwitchToDrive() {
+	println("The gear is already Drive")
+}
+
+func (s *StateDrive) SwitchToReverse() {
+	s.gear.setNewState(NewStateReverse(s.gear))
+}
