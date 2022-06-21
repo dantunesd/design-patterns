@@ -10,8 +10,9 @@ func NewStateReverse(gear *Gear) *StateReverse {
 	}
 }
 
-func (s *StateReverse) Accelerate() {
+func (s *StateReverse) Accelerate() bool {
 	println("Accelerating backwards")
+	return true
 }
 
 func (s *StateReverse) SwitchToNeutral() {

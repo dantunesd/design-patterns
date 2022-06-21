@@ -1,7 +1,7 @@
 package gear
 
 type State interface {
-	Accelerate()
+	Accelerate() bool
 	SwitchToNeutral()
 	SwitchToDrive()
 	SwitchToReverse()

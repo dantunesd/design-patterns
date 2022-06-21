@@ -13,8 +13,8 @@ func NewGear() *Gear {
 	return gear
 }
 
-func (g *Gear) Accelerate() {
-	g.state.Accelerate()
+func (g *Gear) Accelerate() bool {
+	return g.state.Accelerate()
 }
 
 func (g *Gear) SwitchToNeutral() {

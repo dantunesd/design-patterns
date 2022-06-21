@@ -10,8 +10,9 @@ func NewStateNeutral(gear *Gear) *StateNeutral {
 	}
 }
 
-func (s *StateNeutral) Accelerate() {
+func (s *StateNeutral) Accelerate() bool {
 	println("The gear is in neutral. Change it.")
+	return false
 }
 
 func (s *StateNeutral) SwitchToNeutral() {

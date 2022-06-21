@@ -10,8 +10,9 @@ func NewStateDrive(gear *Gear) *StateDrive {
 	}
 }
 
-func (s *StateDrive) Accelerate() {
+func (s *StateDrive) Accelerate() bool {
 	println("Accelerating foward")
+	return true
 }
 
 func (s *StateDrive) SwitchToNeutral() {
