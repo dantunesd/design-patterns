@@ -1,7 +1,5 @@
 package gear
 
-var onNeutralGearMessage = "The car is on neutral gear. Change it."
-
 type StateNeutral struct {
 	gear *Gear
 }
@@ -13,15 +11,11 @@ func NewStateNeutral(gear *Gear) *StateNeutral {
 }
 
 func (s *StateNeutral) Accelerate() {
-	println(onNeutralGearMessage)
-}
-
-func (s *StateNeutral) Brake() {
-	println(onNeutralGearMessage)
+	println("The gear is in neutral. Change it.")
 }
 
 func (s *StateNeutral) SwitchToNeutral() {
-	println("The gear is already Neutral")
+	println("The gear is already neutral")
 }
 
 func (s *StateNeutral) SwitchToDrive() {

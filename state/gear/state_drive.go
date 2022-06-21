@@ -14,10 +14,6 @@ func (s *StateDrive) Accelerate() {
 	println("Accelerating foward")
 }
 
-func (s *StateDrive) Brake() {
-	println("Braking the car")
-}
-
 func (s *StateDrive) SwitchToNeutral() {
 	s.gear.setNewState(NewStateNeutral(s.gear))
 }

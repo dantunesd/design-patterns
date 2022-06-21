@@ -2,27 +2,9 @@ package car
 
 import "design-patterns/state/gear"
 
-type ICarState interface {
-	TurnOn()
-	TurnOff()
-	Accelerate()
-	Brake()
-	SwitchToNeutral()
-	SwitchToDrive()
-	SwitchToReverse()
-}
-
-type IGear interface {
-	Accelerate()
-	Brake()
-	SwitchToNeutral()
-	SwitchToDrive()
-	SwitchToReverse()
-}
-
 type Car struct {
-	state ICarState
-	gear  IGear
+	state State
+	gear  gear.State
 }
 
 func NewCar() *Car {
@@ -62,6 +44,6 @@ func (c *Car) SwitchToReverse() {
 	c.state.SwitchToReverse()
 }
 
-func (c *Car) setNewState(state ICarState) {
+func (c *Car) setNewState(state State) {
 	c.state = state
 }

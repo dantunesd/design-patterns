@@ -14,10 +14,6 @@ func (s *StateReverse) Accelerate() {
 	println("Accelerating backwards")
 }
 
-func (s *StateReverse) Brake() {
-	println("Braking the car")
-}
-
 func (s *StateReverse) SwitchToNeutral() {
 	s.gear.setNewState(NewStateNeutral(s.gear))
 }
@@ -27,5 +23,5 @@ func (s *StateReverse) SwitchToDrive() {
 }
 
 func (s *StateReverse) SwitchToReverse() {
-	println("The gear is already Reverse")
+	println("The gear is already reverse")
 }

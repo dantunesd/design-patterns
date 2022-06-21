@@ -20,12 +20,12 @@ func (s *StateOn) TurnOff() {
 	s.car.setNewState(NewStateOff(s.car))
 }
 
-func (s *StateOn) Accelerate() {
-	s.car.gear.Accelerate()
+func (s *StateOn) Brake() {
+	println("braking the car")
 }
 
-func (s *StateOn) Brake() {
-	s.car.gear.Brake()
+func (s *StateOn) Accelerate() {
+	s.car.gear.Accelerate()
 }
 
 func (s *StateOn) SwitchToNeutral() {

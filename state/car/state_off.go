@@ -22,11 +22,11 @@ func (s *StateOff) TurnOff() {
 	println(carOffMessage)
 }
 
-func (s *StateOff) Accelerate() {
+func (s *StateOff) Brake() {
 	println(carOffMessage)
 }
 
-func (s *StateOff) Brake() {
+func (s *StateOff) Accelerate() {
 	println(carOffMessage)
 }
 
