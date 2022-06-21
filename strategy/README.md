@@ -1,5 +1,7 @@
 # Strategy
 
-## Quando queremos nos locomover para algum lugar, precisamos decidir qual é o meio de transporte. Apesar das diferentes opções, no final, todas elas nos transportam para tal local.
+Sometimes you have different objects which contains different attributes but that behaves similarly, like Credit Card and Money, they have different attributes, but they serve as a payment method when you are shopping.
 
-## Implementando o strategy, definindo uma interface para o que é comum, e implementando as particularidades em cada classe, podemos trocar uma pela outra e selecionar o que fizer sentido. Facilitando também a adição de novas classes que seguem as mesmas características.
+Implementing the strategy pattern, you standardize the behavior of these objects, so you are able to switch, add or remove these objects as you like, without impacting the other objects already created.
+
+All you need to do is finding their behaviors similarities. Create an interface, so these objects implements it. Create a manager, which receives these objects instances and then, implement logic, which will be responsible to choose which one will be called.

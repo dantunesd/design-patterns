@@ -1,14 +1,15 @@
 package main
 
+import "design-patterns/strategy/transport"
+
 func main() {
-	transporteGerenciador := NewTransporteGerenciador()
+	transportManager := transport.NewManager()
 
-	transporteGerenciador.SetTransporte(NewAviaoStrategy())
-	transporteGerenciador.Transportar("Joaozinho")
+	transportManager.Add(transport.NewPlaneStrategy())
+	transportManager.Add(transport.NewBusStrategy())
+	transportManager.Add(transport.NewTaxiStrategy())
 
-	transporteGerenciador.SetTransporte(NewOnibusStrategy())
-	transporteGerenciador.Transportar("Joaozinho")
-
-	transporteGerenciador.SetTransporte(NewTaxiStrategy())
-	transporteGerenciador.Transportar("Joaozinho")
+	transportManager.Transport("myself", transport.PLANE)
+	transportManager.Transport("myself", transport.BUS)
+	transportManager.Transport("myself", transport.TAXI)
 }
