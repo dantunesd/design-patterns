@@ -16,15 +16,14 @@ func NewDeliveryHandler() *DeliveryHandler {
 }
 
 func (h *DeliveryHandler) Handle(order *order.Order) {
-	if h.isAvailable() {
-		h.BaseHandler.Handle(order)
+	if !h.isDeliveryAvailable() {
+		h.printUnavailableDelivery()
 		return
 	}
-
-	h.printUnavailableDelivery()
+	h.BaseHandler.Handle(order)
 }
 
-func (h *DeliveryHandler) isAvailable() bool {
+func (h *DeliveryHandler) isDeliveryAvailable() bool {
 	rand.Seed(time.Now().UnixNano())
 	return rand.Intn(2) == 1
 }
