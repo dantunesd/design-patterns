@@ -6,4 +6,4 @@ But when your application grows and you add more steps, those "if" after "if" ge
 
 Implementing chain of responsibility, you create different handlers to do what you want separately of each other and then calls the next handler if necessary.
 
-The benefitis of applying this pattern is that you isolate one handler from another, so each handler can contain a spefic logic. You can easily change their calling order in the chain. Also adding or removing handlers don't impact (shouldn't) the others. 
+The benefitis of applying this pattern is that you isolate one handler from another, so each handler can contain a specific logic. You can easily change their calling order in the chain. Also adding or removing handlers don't impact (shouldn't) the others. 

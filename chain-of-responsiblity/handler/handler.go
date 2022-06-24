@@ -24,9 +24,9 @@ func (h *BaseHandler) Handle(order *order.Order) {
 		return
 	}
 
-	h.printEverithingsOk(order)
+	h.printEverythingIsOk(order)
 }
 
-func (h *BaseHandler) printEverithingsOk(order *order.Order) {
-	fmt.Printf("evething is ok with '%s' order.\n", order.Product)
+func (h *BaseHandler) printEverythingIsOk(order *order.Order) {
+	fmt.Printf("everything is ok with '%s' order.\n", order.Product)
 }
