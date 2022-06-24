@@ -1,5 +1,10 @@
 package customer
 
+type Listener interface {
+	Notify(customer *Customer)
+	IsSubscribed(event CustomerEvent) bool
+}
+
 type EventManager struct {
 	listeners []Listener
 }
