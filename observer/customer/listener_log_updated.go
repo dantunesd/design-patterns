@@ -13,5 +13,5 @@ func (l *LogUpdatedListener) Notify(customer *Customer) {
 }
 
 func (l *LogUpdatedListener) IsSubscribed(event CustomerEvent) bool {
-	return event == ACTIVATED || event == INACTIVATED
+	return event == UPDATED
 }

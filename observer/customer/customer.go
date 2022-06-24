@@ -10,9 +10,8 @@ const (
 type CustomerEvent string
 
 const (
-	CREATED     CustomerEvent = "created"
-	ACTIVATED   CustomerEvent = "activated"
-	INACTIVATED CustomerEvent = "inactiveted"
+	CREATED CustomerEvent = "created"
+	UPDATED CustomerEvent = "updated"
 )
 
 type Customer struct {
@@ -33,6 +32,6 @@ func (c *Customer) Activate() {
 	c.status = active
 }
 
-func (c *Customer) Inactivate() {
+func (c *Customer) Deactivate() {
 	c.status = inactive
 }

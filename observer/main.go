@@ -11,9 +11,9 @@ func main() {
 	customerJohn := customer.NewCustomer("John", "2000-01-01")
 	eventManager.Notify(customer.CREATED, customerJohn)
 
-	customerJohn.Inactivate()
-	eventManager.Notify(customer.INACTIVATED, customerJohn)
+	customerJohn.Deactivate()
+	eventManager.Notify(customer.UPDATED, customerJohn)
 
 	customerJohn.Activate()
-	eventManager.Notify(customer.ACTIVATED, customerJohn)
+	eventManager.Notify(customer.UPDATED, customerJohn)
 }
