@@ -12,7 +12,8 @@ Design Patterns simple examples.
     - [Proxy](/proxy/)
 
 - Behavioral
-    - [Chain of responsiblity](/chain-of-responsiblity)
+    - [Chain of responsiblity](/chain-of-responsiblity/)
+    - [Command](/command/)
     - [Observer](/observer/)
     - [State](/state/)
     - [Strategy](/strategy/)
